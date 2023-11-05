@@ -1,3 +1,4 @@
+import { provideHttpClient } from "@angular/common/http";
 import { bootstrapApplication } from "@angular/platform-browser";
 import { AppComponent } from "./app/app.component";
 import { provideRouter } from "@angular/router";
@@ -9,6 +10,7 @@ import { authFeatureKey, authReducer } from "./app/auth/store/reducers";
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(),
     provideRouter(appRoutes),
     provideStore(),
     provideState(authFeatureKey, authReducer),
